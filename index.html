@@ -4,12 +4,17 @@
   <meta charset="UTF-8">
   <title>Versand – Iniciar sesión</title>
   <style>
-    body {font-family: Arial, Helvetica, sans-serif; background:#f0f4f8; color:#333; margin:0; padding:0; display:flex; justify-content:center; align-items:center; height:100vh;}
-    .container {background:#fff; padding:2rem; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.1); max-width:400px; width:100%;}
+    body {font-family: Arial, Helvetica, sans-serif; background:#f0f4f8; color:#333;
+          margin:0; padding:0; display:flex; justify-content:center; align-items:center;
+          height:100vh;}
+    .container {background:#fff; padding:2rem; border-radius:8px;
+                box-shadow:0 4px 12px rgba(0,0,0,0.1); max-width:400px; width:100%;}
     h1 {color:#2c3e50; text-align:center;}
     label {display:block; margin-top:1rem;}
-    input[type="email"], input[type="password"] {width:100%; padding:0.5rem; margin-top:0.3rem; border:1px solid #ccc; border-radius:4px;}
-    button {margin-top:1.5rem; width:100%; padding:0.7rem; background:#3498db; color:#fff; border:none; border-radius:4px; cursor:pointer; font-size:1rem;}
+    input[type="email"], input[type="password"] {width:100%; padding:0.5rem;
+        margin-top:0.3rem; border:1px solid #ccc; border-radius:4px;}
+    button {margin-top:1.5rem; width:100%; padding:0.7rem; background:#3498db;
+        color:#fff; border:none; border-radius:4px; cursor:pointer; font-size:1rem;}
     button:hover {background:#2980b9;}
     .error {color:#e74c3c; margin-top:0.5rem;}
     .marketplace {display:none; margin-top:2rem;}
@@ -17,7 +22,8 @@
     .marketplace li {margin:0.5rem 0;}
     .marketplace a {color:#2980b9; text-decoration:none;}
     .marketplace a:hover {text-decoration:underline;}
-    .token {word-break:break-all; background:#ecf0f1; padding:0.5rem; margin-top:0.5rem; border-radius:4px; font-size:0.9rem;}
+    .token {word-break:break-all; background:#ecf0f1; padding:0.5rem;
+            margin-top:0.5rem; border-radius:4px; font-size:0.9rem;}
   </style>
 </head>
 <body>
@@ -33,19 +39,22 @@
       <button type="submit">Entrar</button>
       <div class="error" id="errorMsg"></div>
     </form>
+
     <div class="marketplace" id="marketplace">
       <h2>Versand Marketplace</h2>
       <p>Selecciona el módulo que deseas acceder:</p>
       <ul>
-        <li><a href="/api/operator/shipping-queue">Envíos y órdenes de pedidos</a></li>
-        <li><a href="/api/payments">Pasarela de pago (placeholder)</a></li>
-        <li><a href="/api/notifications">Notificaciones</a></li>
-        <li><a href="/api/products">Gestión de productos y carritos</a></li>
-        <li><a href="/api/tracking">Seguimiento</a></li>
-        <li><a href="/api/accounting">Contabilidad</a></li>
-        <li><a href="/api/catalogo">Catálogo</a></li>
+        <li><a href="http://localhost:4001/api/operator/shipping-queue">Envíos y órdenes de pedidos</a></li>
+        <li><a href="http://localhost:4001/api/payments">Pasarela de pago (placeholder)</a></li>
+        <li><a href="http://localhost:4001/api/notifications">Notificaciones</a></li>
+        <li><a href="http://localhost:4001/api/products">Gestión de productos y carritos</a></li>
+        <li><a href="http://localhost:4002/api/tracking">Seguimiento</a></li>
+        <li><a href="http://localhost:4001/api/accounting">Contabilidad</a></li>
+        <li><a href="http://localhost:4001/api/catalogo">Catálogo</a></li>
       </ul>
-      <div>Token recibido:<div class="token" id="tokenDisplay"></div></div>
+      <div>Token recibido:
+        <div class="token" id="tokenDisplay"></div>
+      </div>
     </div>
   </div>
   <script>
@@ -53,7 +62,6 @@
     const errorMsg = document.getElementById('errorMsg');
     const marketplace = document.getElementById('marketplace');
     const tokenDisplay = document.getElementById('tokenDisplay');
-
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       errorMsg.textContent = '';
@@ -80,4 +88,3 @@
   </script>
 </body>
 </html>
-
